@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Meeting Room Booking</title>
+    <meta http-equiv="Date-Type" date="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("#datepicker").datepicker({
+                beforeShowDay: $.datepicker.noWeekends,
+                firstDay: 1 // Понедельник первым днем недели
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Meeting Room Booking</h1>
+    <h1>Form</h1>
+    <form action="#" th:action="@{/bookMeeting}" method="post">
+        <p>Room id: <input type="number" name="id" /></p>
+        <p>Date: <input type="date" name="date" /></p>
+        <p>Time: <input type="time" name="time" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+    <table>
+        <tbody>
+        <tr th:if="${reservations.empty}">
+            <td colspan="3"> No reservations Available </td>
+        </tr>
+        <tr th:each="reservation : ${reservations}">
+            <td><span th:text="${reservation.id}"> id </span></td>
+            <td><span th:text="${reservation.date}"> date </span></td>
+            <td><span th:text="${reservation.time}"> time </span></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

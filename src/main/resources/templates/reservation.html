@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Date-Type" date="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/reservation}" th:object="${reservation}" method="post">
+    <p>Room id: <input type="text" th:field="*{id}" /></p>
+    <p>Date: <input type="text" th:field="*{date}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE HTML>-->
+<!--<html xmlns:th="https://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Getting Started: Handling Form Submission</title>-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+<!--    <style>-->
+<!--        #confirmation {-->
+<!--            display: none;-->
+<!--            position: fixed;-->
+<!--            top: 50%;-->
+<!--            left: 50%;-->
+<!--            transform: translate(-50%, -50%);-->
+<!--            background-color: #fff;-->
+<!--            padding: 20px;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);-->
+<!--        }-->
+<!--    </style>-->
+<!--    <script>-->
+<!--        function showConfirmation() {-->
+<!--            document.getElementById('confirmation').style.display = 'block';-->
+<!--            setTimeout(function(){-->
+<!--                document.getElementById('confirmation').style.display = 'none';-->
+<!--            }, 1000);-->
+<!--            return false; -->
+<!--        }-->
+<!--    </script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Форма</h1>-->
+<!--<form action="#" th:action="@{/reservation}" th:object="${reservation}" method="post" onsubmit="return showConfirmation()">-->
+<!--    <p>Id комнаты: <input type="text" th:field="*{id}" /></p>-->
+<!--    <p>Дата: <input type="text" th:field="*{date}" /></p>-->
+<!--    <p><input type="submit" value="Отправить" /> <input type="reset" value="Сбросить" /></p>-->
+<!--</form>-->
+
+<!--<div id="confirmation">-->
+<!--    <p>Принято</p>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
