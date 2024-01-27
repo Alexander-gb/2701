@@ -28,6 +28,11 @@ public class MeetingController {
         bookedMeetings.add(reservation);
         return "redirect:/meeting";
     }
+    @PostMapping("/clearReservations")
+    public String clearReservations(Model model) {
+        bookedMeetings.clear();
+        return "redirect:/meeting";
+    }
 //------------------------------------------------------------------------------------------------------
     @GetMapping("/reservation")
     public String reservationForm(Model model) {
